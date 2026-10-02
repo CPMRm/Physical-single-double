@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狹縫干涉與繞射速記卡</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-blue: #38bdf8;
+            --accent-purple: #c084fc;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--accent-blue);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-sub);
+            margin-bottom: 30px;
+        }
+
+        .mnemonic-box {
+            background: linear-gradient(135deg, #1e1b4b, #311042);
+            border: 1px solid var(--accent-purple);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .mnemonic-title {
+            color: var(--accent-purple);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .mnemonic-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .mnemonic-list li {
+            margin-bottom: 8px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #334155;
+        }
+
+        th {
+            background-color: #0f172a;
+            color: var(--accent-blue);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight {
+            color: #f43f5e;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .compare-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #334155;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent-blue);
+        }
+
+        .card-title.single {
+            border-color: var(--accent-purple);
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>狹縫干涉與繞射速記卡</h1>
+    <p class="subtitle">考前 3 分鐘快速記憶指南</p>
+
+    <!-- 三句話口訣 -->
+    <div class="mnemonic-box">
+        <div class="mnemonic-title">💡 核心口訣（秒殺觀念）</div>
+        <ol class="mnemonic-list">
+            <li><b>波長 $\lambda$ 越大（慢電子/紅光）</b> $\rightarrow$ 波動性強 $\rightarrow$ 條紋全部<span class="highlight-green">拉寬、變稀疏</span>。</li>
+            <li><b>縫隙/距離（$a$ 或 $d$）越寬</b> $\rightarrow$ 波動被限制 $\rightarrow$ 條紋全部<span class="highlight">變窄、變密集</span>。</li>
+            <li><b>狹縫本身（$a$）過寬</b> $\rightarrow$ 波不擴散了 $\rightarrow$ 繞射效果變差，<span class="highlight">對比度下降變模糊</span>。</li>
+        </ol>
+    </div>
+
+    <!-- 總整理表格 -->
+    <div class="table-container">
+        <h3>全特性影響總整理</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>改變條件</th>
+                    <th>物理意義</th>
+                    <th>單狹縫（中央亮帶）</th>
+                    <th>雙狹縫（條紋間距 $\Delta y$）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>波長 $\lambda$ 變大</b> (慢電子)</td>
+                    <td>波動性顯著</td>
+                    <td><span class="highlight-green">變寬</span></td>
+                    <td><span class="highlight-green">變寬（變稀疏）</span></td>
+                </tr>
+                <tr>
+                    <td><b>波長 $\lambda$ 變小</b> (快電子)</td>
+                    <td>粒子性顯著</td>
+                    <td><span class="highlight">變窄</span></td>
+                    <td><span class="highlight">變窄（變密集）</span></td>
+                </tr>
+                <tr>
+                    <td><b>狹縫寬度 $a$ 變寬</b></td>
+                    <td>通道變大</td>
+                    <td><span class="highlight">變窄</span> (繞射差)</td>
+                    <td>不變 (模糊變光斑)</td>
+                </tr>
+                <tr>
+                    <td><b>雙縫距離 $d$ 變大</b></td>
+                    <td>兩縫間距變遠</td>
+                    <td>不受影響</td>
+                    <td><span class="highlight">變窄（變密集）</span></td>
+                </tr>
+                <tr>
+                    <td><b>屏幕距離 $L$ 變遠</b></td>
+                    <td>幾何放大</td>
+                    <td><span class="highlight-green">變寬</span></td>
+                    <td><span class="highlight-green">變寬</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 單雙狹縫側邊卡片 -->
+    <div class="compare-grid">
+        <div class="card">
+            <div class="card-title">單狹縫（Single Slit）</div>
+            <ul>
+                <li><b>看寬度 $a$</b>：狹縫越窄，繞射擴散越厲害，中央亮帶<span class="highlight-green">越寬</span>。</li>
+                <li><b>中央寬度公式</b>：$Y = \frac{2\lambda L}{a}$</li>
+                <li><b>特徵</b>：中央亮帶特別寬（兩倍寬），越往兩旁越暗。</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-title single">雙狹縫（Double Slits）</div>
+            <ul>
+                <li><b>看距離 $d$</b>：兩縫間距越遠，干涉點越密集，條紋間距<span class="highlight">越窄</span>。</li>
+                <li><b>條紋間距公式</b>：$\Delta y = \frac{\lambda L}{d}$</li>
+                <li><b>特徵</b>：明暗間隔均勻，正中央一定是<span class="highlight-green">最亮的中央極大</span>。</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
